@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var alertIsVisible: Bool = false
-    
+    @State var alertIsVisible: Bool = false    
     
     var body: some View {
         VStack {
