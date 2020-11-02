@@ -8,14 +8,25 @@
 import SwiftUI 
 
 struct ContentView: View {
+    
+    @State var alertIsVisible: Bool = false
+    
+    
     var body: some View {
         VStack {
             Text("Welcome to my first app")
                 .fontWeight(.semibold)
                 .foregroundColor(Color.green)
                 .padding()
-            Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Hit Me")/*@END_MENU_TOKEN@*/
+            Button(action:  {
+                print("Button pressed!")
+                self.alertIsVisible = true
+            }) {
+                Text("Hit me")
+            }
+            .alert(isPresented: $alertIsVisible) {
+                () -> Alert in
+                return Alert(title: Text("Hello there!"), message: Text("This is my first popup"), dismissButton: .default(Text("Code")))
             }
         }
     }
