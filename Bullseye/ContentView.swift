@@ -21,7 +21,6 @@ struct ContentView: View {
                 .foregroundColor(Color.white)
                 .modifier(Shadow())
                 .font(Font.custom("Arial Rounded MT Bold", size: 18))
-
         }
     }
     
@@ -61,6 +60,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+        NavigationView {
         HStack {
             VStack {
                 HStack {
@@ -116,15 +116,15 @@ struct ContentView: View {
                             Image("InfoIcon")
                             Text("Info")}.modifier(ButtonSmallTextStyle())
                             .background(Image("Button")).modifier(Shadow())
-                    }
+                        }
                 }
                 .padding(.bottom, 20)
                 .navigationBarTitle("Bullseye 🎯")
-
                 }
             .background(Image("Background"), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             }
         }
+    }
     func slideValueRounded() -> Int {
         Int(sliderValue.rounded())
     }
